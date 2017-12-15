@@ -1,4 +1,6 @@
+console.log("new Promise之前");
 var p1 = new Promise(function (resolve, reject) {
+    console.log("new Promise里面");
     var value = 123;
     setTimeout(function () {
         if (true) {
@@ -8,6 +10,7 @@ var p1 = new Promise(function (resolve, reject) {
         }
     }, 5000);
 });
+console.log("new Promise之后");
 
 var p2;
 p1.then(function (value) {
