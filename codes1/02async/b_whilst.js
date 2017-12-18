@@ -26,7 +26,7 @@ function fn(callback) {
     setTimeout(function () {
         console.log("task" + oneRow.id + "中的异步代码");
         callback(null)
-    }, 1000);
+    }, 100);
 }
 
 async.whilst(fntest, fn, function (err) {
@@ -34,6 +34,7 @@ async.whilst(fntest, fn, function (err) {
         console.log(err);
     }
     console.log("执行完毕");
+    process.exit();
 });
 
 
